@@ -1,0 +1,88 @@
+<div class="col-12 col-sm-12 col-md-12 col-lg-4">
+  <div class="card">
+    <div class="card-header">
+        <h5 class="card-title">{{liveWeather.name}}</h5>
+    </div>
+    <div class="card-body">
+        <table *ngIf='resultFound()'>
+          <tbody>
+            <tr>
+              <td>
+                <h6>Current Temperature:</h6>
+              </td>
+              <td>
+                <h6>{{liveWeather.main?.temp - 273.15 | number:'1.0-0'}}<sup>o</sup>C</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Maximum Temperature:</h6>
+              </td>
+              <td>
+                <h6>{{liveWeather.main?.temp - 273.15 | number:'1.0-0'}}<sup>o</sup>C</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Minimum Temperature:</h6>
+              </td>
+              <td>
+                <h6>{{liveWeather.main?.temp_min - 273.15 | number:'1.0-0'}}<sup>o</sup>C</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Clouds:</h6>
+              </td>
+              <td>
+                <h6>{{liveWeather.clouds?.all}}%</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Humidity</h6>
+              </td>
+              <td>
+                <h6>{{liveWeather.main?.humidity}}%</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Pressure</h6>
+              </td>
+              <td>
+                <h6>{{liveWeather.main?.pressure}}mb</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Sunrise</h6>
+              </td>
+              <td>
+                <h6>{{liveWeather.sys?.sunrise*1000 | date:'long'}}</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Sunset</h6>
+              </td>
+              <td>
+                <h6>{{liveWeather.sys?.sunset*1000 | date:'long'}}</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Visibility</h6>
+              </td>
+              <td>
+                <h6>{{liveWeather.visibility}}m</h6>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+  <div *ngIf='!resultFound()'>
+    <h1 class="center">{{message || 'Failed to get weather.'}}</h1>
+  </div>
+</div>

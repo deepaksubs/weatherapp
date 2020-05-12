@@ -1,0 +1,19 @@
+#title{
+  margin-right: 30px;
+  font-family: 'Jost', sans-serif;
+  font-weight: bold;
+}
+.mat-button{
+  height: 33px;
+}
+.mat-toolbar{
+  background: linear-gradient(to left, #b92b27, #1565c0);
+  color: white;
+}
+.mat-error, .mat-input-element, .mat-warn .mat-input-element{
+  color: white !important;
+  border-bottom-color: white !important;
+}
+.mat-focused {
+  color: white;
+}
